@@ -206,6 +206,10 @@ const closeDetailModal = () => detailModal.classList.add('hidden');
 btnCloseModal.onclick = closeModal;
 btnCloseDetail.onclick = closeDetailModal;
 
+modal.querySelector('.modal-content').addEventListener('click', (event) => {
+    event.stopPropagation();
+});
+
 window.onclick = (e) => { 
     if (e.target === modal) closeModal(); 
     if (e.target === detailModal) closeDetailModal();
